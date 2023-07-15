@@ -1,6 +1,5 @@
 package sg.edu.rp.c346.id22012732.songplaylist;
 
-import android.app.ListActivity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -26,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        songTitleEditText = findViewById(R.id.editTitle);
-        singersEditText = findViewById(R.id.editSingers);
-        releaseYearText = findViewById(R.id.editYear);
+        songTitleEditText = findViewById(R.id.editTextTitle);
+        singersEditText = findViewById(R.id.editTextSingers);
+        releaseYearText = findViewById(R.id.editTextYear);
         ratings = findViewById(R.id.rating);
-        insertButton = findViewById(R.id.btnInsert);
-        displayButton = findViewById(R.id.btnShowList);
+        insertButton = findViewById(R.id.btnUpdate);
+        displayButton = findViewById(R.id.btnDelete);
 
         insertButton.setOnClickListener(new View.OnClickListener() {
             @Override

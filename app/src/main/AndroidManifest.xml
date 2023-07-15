@@ -27,6 +27,12 @@
             android:name=".SongListActivity"
             android:label="Song List"
             android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".SongDetailsActivity"
+            android:label="Song Details"
+            android:parentActivityName=".SongListActivity" />
+
     </application>
 
 </manifest>

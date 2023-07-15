@@ -1,4 +1,5 @@
 package sg.edu.rp.c346.id22012732.songplaylist;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -6,8 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
-
-import sg.edu.rp.c346.id22012732.songplaylist.Song;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "song.db";
@@ -39,7 +38,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SONG);
         onCreate(db);
     }
-
 
     public long insertSong(String title, String singers, int year, int stars) {
         SQLiteDatabase db = getWritableDatabase();
@@ -75,5 +73,25 @@ public class DBHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return songList;
+    }
+
+    public boolean updateSong(Song song) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_TITLE, song.getTitle());
+        values.put(COLUMN_SINGERS, song.getSingers());
+        values.put(COLUMN_YEAR, song.getYear());
+        values.put(COLUMN_STARS, song.getStars());
+
+        int rowsAffected = db.update(TABLE_SONG, values, COLUMN_ID + "=?", new String[]{String.valueOf(song.getId())});
+        db.close();
+        return rowsAffected > 0;
+    }
+
+    public boolean deleteSong(Song song) {
+        SQLiteDatabase db = getWritableDatabase();
+        int rowsAffected = db.delete(TABLE_SONG, COLUMN_ID + "=?", new String[]{String.valueOf(song.getId())});
+        db.close();
+        return rowsAffected > 0;
     }
 }

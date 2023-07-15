@@ -22,15 +22,31 @@ public class Song {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getSingers() {
         return singers;
+    }
+
+    public void setSingers(String singers) {
+        this.singers = singers;
     }
 
     public int getYear() {
         return year;
     }
 
+    public void setYear(int year) {
+        this.year = year;
+    }
+
     public int getStars() {
         return stars;
+    }
+
+    public void setStars(int stars) {
+        this.stars = stars;
     }
 }

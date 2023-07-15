@@ -14,7 +14,7 @@
         android:text="Song Title" />
 
     <EditText
-        android:id="@+id/editTitle"
+        android:id="@+id/editTextTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -27,7 +27,7 @@
         android:text="Singers" />
 
     <EditText
-        android:id="@+id/editSingers"
+        android:id="@+id/editTextSingers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -41,7 +41,7 @@
         android:text="Year" />
 
     <EditText
-        android:id="@+id/editYear"
+        android:id="@+id/editTextYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -97,14 +97,14 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnInsert"
+            android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Insert" />
 
         <Button
-            android:id="@+id/btnShowList"
+            android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
